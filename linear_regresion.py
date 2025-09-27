@@ -4,9 +4,9 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 
-def linear_regresion():
+def linear_regresion(test_size=0.2, random_state=42):
  # Cargar el dataset
-    diabetes = load_diabetes(test_size=0.12, random_state=42)
+    diabetes = load_diabetes()
     X = diabetes.data[:, 2].reshape(-1, 1)  # Solo BMI (índice 2)
     y = diabetes.target
  

@@ -3,7 +3,7 @@ def linear_regresion():
     diabetes = load_diabetes()
     X = diabetes.data[:, 2].reshape(-1, 1)  # Solo BMI (índice 2)
     y = diabetes.target
-
+ 
     # Dividir en entrenamiento y prueba
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.12, random_state=42)
 

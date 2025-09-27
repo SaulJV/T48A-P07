@@ -6,12 +6,12 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 def linear_regresion():
  # Cargar el dataset
-    diabetes = load_diabetes()
+    diabetes = load_diabetes(test_size=0.12, random_state=42)
     X = diabetes.data[:, 2].reshape(-1, 1)  # Solo BMI (índice 2)
     y = diabetes.target
  
     # Dividir en entrenamiento y prueba
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.12, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=test_size)
  
     # Entrenar el modelo
     model = LinearRegression()
